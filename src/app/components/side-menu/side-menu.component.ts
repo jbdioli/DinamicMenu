@@ -1,28 +1,36 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuService } from 'src/app/services/menu.service';
-import { CoreService } from 'src/app/core/core.service';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { CoreMenuService } from 'src/app/services/core-menu.service';
 
-export interface MenuLink {
-  title: string;
-  linkHref: string;
-}
 
 @Component({
   selector: 'app-side-menu',
   templateUrl: './side-menu.component.html',
   styleUrls: ['./side-menu.component.scss'],
 })
-export class SideMenuComponent implements OnInit {
+export class SideMenuComponent implements OnInit , OnDestroy {
+  selectedPath = '';
+  menuSub: Subscription;
+  sideMenu: any;
 
-  constructor(public menu: MenuService, public core: CoreService) {}
-
-  public navToPage(link: MenuLink) {
-    console.log('Navigating to: ', link.linkHref);
-   // this.core.navToPage(link.linkHref);
-  }
-
-
+  constructor(public menu: CoreMenuService) {}
 
   ngOnInit() {}
 
+  // Method trigger when the menu is open
+  menuOpened() {
+    // subscibe to the emitter to get the menu stucture
+    this.menuSub = this.menu.details.subscribe((value: any) => {
+      this.sideMenu = value;
+    });
+  }
+
+  // Method trigger when the menu is close
+  menuClosed() {
+    this.menuSub.unsubscribe();
+  }
+
+  ngOnDestroy() {
+    this.menuSub.unsubscribe();
+  }
 }

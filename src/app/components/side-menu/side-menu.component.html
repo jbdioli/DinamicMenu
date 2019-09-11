@@ -1,13 +1,22 @@
-<ion-menu [style.display]="'none'" side="end" contentId="mainContent" menuId="slidingMenu" id="slidingMenu">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>{{(menu?.details | async)?.chat?.name}}</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content>
+<ion-menu side="start" type="overlay" contentId="mainContent" menuId="slidingMenu" id="slidingMenu" (ionWillOpen) = "menuOpened()"  (ionDidClose) = "menuClosed()">
+  
+    <ion-header>
+      <ion-toolbar translucent>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
 
-    <ion-list>
-      <ion-item *ngFor="let link of (menu?.details | async)?.links" detail (click)="navToPage(link)">{{link?.title}}</ion-item>
-    </ion-list>
-  </ion-content>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" *ngFor="let link of sideMenu">
+            <ion-item [routerLink]="link?.linkHref" routerDirection="root" [class.active-item]="selectedPath.startsWith(link?.linkHref)">
+              <ion-label>
+                  {{link?.title}}
+              </ion-label>
+            </ion-item>
+        </ion-menu-toggle>
+        
+      </ion-list>
+    </ion-content>
 </ion-menu>

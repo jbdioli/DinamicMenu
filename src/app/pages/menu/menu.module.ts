@@ -9,8 +9,31 @@ import { MenuPage } from './menu.page';
 
 const routes: Routes = [
   {
+    path: 'displayPage',
+    component: MenuPage,
+    children: [
+      {
+        path: 'HomePage',
+        loadChildren: '../home/home.module#HomePageModule'
+      },
+      {
+        path: 'BoatPage',
+        loadChildren: '../boat/boat.module#BoatPageModule'
+      },
+      {
+        path: 'PersonPage',
+        loadChildren: '../person/person.module#PersonPageModule'
+      },
+      {
+        path: 'PlanetPage',
+        loadChildren: '../planet/planet.module#PlanetPageModule'
+      }
+    ]
+  },
+  {
     path: '',
-    component: MenuPage
+    redirectTo: 'displayPage/HomePage',
+    pathMatch: 'full'
   }
 ];
 

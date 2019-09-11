@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { CoreService } from './core/core.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +11,6 @@ import { CoreService } from './core/core.service';
 })
 export class AppComponent {
   constructor(
-    public core: CoreService,
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar
