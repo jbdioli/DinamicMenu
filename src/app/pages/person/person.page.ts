@@ -22,4 +22,8 @@ export class PersonPage implements OnInit {
 
   ngOnInit() {}
 
+  onOpenMenu() {
+    this.menu.toggleMenu();
+  }
+
 }

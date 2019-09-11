@@ -12,7 +12,24 @@ export class CoreMenuService {
 
   constructor(public menu: MenuController) { }
 
-  settleMenu(value: any) {
-    this.details.next(value);
+  public toggleMenu() {
+    this.menu.enable(true, 'slidingMenu');
+    this.menu.enable(false, 'slidingMenu1');
+    this.menu.enable(false, 'slidingMenu2');
+    this.menu.toggle('slidingMenu');
+  }
+
+  public toggleMenu1() {
+    this.menu.enable(false, 'slidingMenu');
+    this.menu.enable(true, 'slidingMenu1');
+    this.menu.enable(false, 'slidingMenu2');
+    this.menu.toggle('slidingMenu1');
+  }
+
+  public toggleMenu2() {
+    this.menu.enable(false, 'slidingMenu');
+    this.menu.enable(false, 'slidingMenu1');
+    this.menu.enable(true, 'slidingMenu2');
+    this.menu.toggle('slidingMenu2');
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoreMenuService } from 'src/app/services/core-menu.service';
 
 @Component({
   selector: 'app-planet',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanetPage implements OnInit {
 
-  constructor() { }
+  constructor( public menu: CoreMenuService ) { }
 
   ngOnInit() {
   }
 
+  onOpenMenu() {
+    this.menu.toggleMenu1();
+  }
+
+  onLaunch() {
+    console.log('hello');
+  }
 }

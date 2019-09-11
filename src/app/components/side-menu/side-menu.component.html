@@ -1,22 +1,58 @@
-<ion-menu side="start" type="overlay" contentId="mainContent" menuId="slidingMenu" id="slidingMenu" (ionWillOpen) = "menuOpened()"  (ionDidClose) = "menuClosed()">
-  
-    <ion-header>
-      <ion-toolbar translucent>
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
+<ion-menu side="start" type="overlay" contentId="mainContent" menuId="slidingMenu" id="slidingMenu"
+  (ionWillOpen)="menuOpened()" (ionDidClose)="menuClosed()">
+
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
 
 
-    <ion-content>
-      <ion-list>
-        <ion-menu-toggle auto-hide="false" *ngFor="let link of sideMenu">
-            <ion-item [routerLink]="link?.linkHref" routerDirection="root" [class.active-item]="selectedPath.startsWith(link?.linkHref)">
-              <ion-label>
-                  {{link?.title}}
-              </ion-label>
-            </ion-item>
-        </ion-menu-toggle>
-        
-      </ion-list>
-    </ion-content>
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle auto-hide="false" *ngFor="let link of sideMenu">
+        <ion-item [routerLink]="link?.linkHref" routerDirection="root"
+                  [class.active-item]="selectedPath.startsWith(link?.linkHref)">
+          <ion-label>
+            {{link?.title}}
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-menu slide="start" type="overlay" contentId="mainContent" menuId="slidingMenu1" id="slidingMenu1">
+
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <ion-menu-toggle auto-hide="false">
+        <ion-item>
+          <ion-icon name="create" color="primary" slot="start"></ion-icon>
+          <ion-label (click)="onLaunch()">
+            Edit
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="Search" color="primary" slot="start"></ion-icon>
+          <ion-label (click)="onSearch()">
+            Search
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="share-alt" color="primary" slot="start"></ion-icon>
+          <ion-label>
+            Share
+          </ion-label>
+        </ion-item>
+      </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
 </ion-menu>
