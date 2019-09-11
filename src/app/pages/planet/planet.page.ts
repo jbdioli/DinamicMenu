@@ -17,7 +17,17 @@ export class PlanetPage implements OnInit {
     this.menu.toggleMenu1();
   }
 
-  onLaunch() {
-    console.log('hello');
+  onCreate() {
+    console.log('Created');
+  }
+
+
+  onSearch() {
+    console.log('Search');
+  }
+
+
+  onShare() {
+    console.log('shared');
   }
 }

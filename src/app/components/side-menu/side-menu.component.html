@@ -1,3 +1,4 @@
+<!-- Menu -->
 <ion-menu side="start" type="overlay" contentId="mainContent" menuId="slidingMenu" id="slidingMenu"
   (ionWillOpen)="menuOpened()" (ionDidClose)="menuClosed()">
 
@@ -23,6 +24,7 @@
   </ion-content>
 </ion-menu>
 
+<!-- Menu 1 -->
 <ion-menu slide="start" type="overlay" contentId="mainContent" menuId="slidingMenu1" id="slidingMenu1">
 
   <ion-header>
@@ -36,7 +38,7 @@
       <ion-menu-toggle auto-hide="false">
         <ion-item>
           <ion-icon name="create" color="primary" slot="start"></ion-icon>
-          <ion-label (click)="onLaunch()">
+          <ion-label (click)="onCreate()">
             Edit
           </ion-label>
         </ion-item>
@@ -48,7 +50,7 @@
         </ion-item>
         <ion-item>
           <ion-icon name="share-alt" color="primary" slot="start"></ion-icon>
-          <ion-label>
+          <ion-label (click)="onShare()">
             Share
           </ion-label>
         </ion-item>

@@ -8,7 +8,6 @@ import { ReplaySubject, Subject } from 'rxjs';
 export class CoreMenuService {
 
   public details: ReplaySubject<any> = new ReplaySubject<any>(1);
-  // public details = new Subject<any>();
 
   constructor(public menu: MenuController) { }
 
