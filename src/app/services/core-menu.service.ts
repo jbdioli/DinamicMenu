@@ -12,24 +12,17 @@ export class CoreMenuService {
 
   constructor(public menu: MenuController) { }
 
+  // Toggle the Menu and hide the one you do not need
   public toggleMenu() {
     this.menu.enable(true, 'slidingMenu');
     this.menu.enable(false, 'slidingMenu1');
-    this.menu.enable(false, 'slidingMenu2');
     this.menu.toggle('slidingMenu');
   }
 
+  // Toggle the Menu1 and hide the one you do not need
   public toggleMenu1() {
     this.menu.enable(false, 'slidingMenu');
     this.menu.enable(true, 'slidingMenu1');
-    this.menu.enable(false, 'slidingMenu2');
     this.menu.toggle('slidingMenu1');
-  }
-
-  public toggleMenu2() {
-    this.menu.enable(false, 'slidingMenu');
-    this.menu.enable(false, 'slidingMenu1');
-    this.menu.enable(true, 'slidingMenu2');
-    this.menu.toggle('slidingMenu2');
   }
 }
