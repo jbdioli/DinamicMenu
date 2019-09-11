@@ -16,6 +16,13 @@ export class SideMenuComponent implements OnInit {
 
   constructor(public menu: MenuService, public core: CoreService) {}
 
+  public navToPage(link: MenuLink) {
+    console.log('Navigating to: ', link.linkHref);
+   // this.core.navToPage(link.linkHref);
+  }
+
+
+
   ngOnInit() {}
 
 }

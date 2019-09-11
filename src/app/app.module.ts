@@ -9,15 +9,15 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
-import { CoreService } from './core/core.service';
+import { CoreMenuService } from './services/core-menu.service';
+
 
 @NgModule({
   declarations: [AppComponent, SideMenuComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  exports: [SideMenuComponent],
   providers: [
-    CoreService,
+    CoreMenuService,
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }

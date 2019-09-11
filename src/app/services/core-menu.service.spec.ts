@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CoreService } from './core.service';
+import { CoreMenuService } from './core-menu.service';
 
-describe('CoreService', () => {
+describe('CoreMenuService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: CoreService = TestBed.get(CoreService);
+    const service: CoreMenuService = TestBed.get(CoreMenuService);
     expect(service).toBeTruthy();
   });
 });
