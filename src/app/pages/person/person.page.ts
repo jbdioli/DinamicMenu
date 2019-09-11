@@ -15,11 +15,11 @@ export class PersonPage implements OnInit {
 
   constructor( public menu: CoreMenuService ) {}
 
-  ngOnInit() {
-
+  ionViewWillEnter() {
     // Create Title and Link that will be display in the menu
     this.menu.details.next(this.sideLinks);
-
   }
+
+  ngOnInit() {}
 
 }

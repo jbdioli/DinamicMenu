@@ -15,9 +15,11 @@ export class HomePage implements OnInit {
 
   constructor(public menu: CoreMenuService) {}
 
-  ngOnInit() {
-  // Create Title and Link that will be display in the menu
+  ionViewWillEnter() {
+    // Create Title and Link that will be display in the menu
     this.menu.details.next(this.sideLinks);
-   }
+  }
+
+  ngOnInit() {}
 
 }
