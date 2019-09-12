@@ -25,10 +25,12 @@ export class SideMenuComponent implements OnInit , OnDestroy {
     // subscibe to the emitter to get the menu stucture
     this.menuSub = this.menu.details.subscribe((value: DummyMenu) => {
       this.sideMenu = value;
+      // Check from which page is from and link the correct method
       this.method = this.setMethod(this.sideMenu[0].page);
     });
   }
 
+  // Method to link the page to the page method
   setMethod(page: string) {
     let method: any;
     switch (page) {
@@ -40,14 +42,17 @@ export class SideMenuComponent implements OnInit , OnDestroy {
   }
 
   onCreate() {
+    // Trigger method
     this.method.onCreate();
   }
 
   onSearch() {
+    // Trigger method
     this.method.onSearch();
   }
 
   onShare() {
+    // Trigger method
     this.method.onShare();
   }
 
