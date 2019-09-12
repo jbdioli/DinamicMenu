@@ -14,6 +14,7 @@ export class SideMenuComponent implements OnInit , OnDestroy {
   selectedPath = '';
   menuSub: Subscription;
   sideMenu: DummyMenu;
+  method: any;
 
   constructor(public menu: CoreMenuService) {}
 
@@ -24,6 +25,7 @@ export class SideMenuComponent implements OnInit , OnDestroy {
     // subscibe to the emitter to get the menu stucture
     this.menuSub = this.menu.details.subscribe((value: DummyMenu) => {
       this.sideMenu = value;
+      this.method = this.setMethod(this.sideMenu[0].page);
     });
   }
 
@@ -38,18 +40,15 @@ export class SideMenuComponent implements OnInit , OnDestroy {
   }
 
   onCreate() {
-    const method = this.setMethod(this.sideMenu[0].page);
-    method.onCreate();
+    this.method.onCreate();
   }
 
   onSearch() {
-    const method = this.setMethod(this.sideMenu[0].page);
-    method.onSearch();
+    this.method.onSearch();
   }
 
   onShare() {
-    const method = this.setMethod(this.sideMenu[0].page);
-    method.onShare();
+    this.method.onShare();
   }
 
 
