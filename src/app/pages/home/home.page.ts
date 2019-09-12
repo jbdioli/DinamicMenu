@@ -11,8 +11,8 @@ import { MenuController } from '@ionic/angular';
 export class HomePage implements OnInit {
 
   // Create Title and Link that will be display in the menu
-  sideLinks: DummyMenu[] = [new DummyMenu('Go to page Boat', 'menu/displayPage/BoatPage'),
-                            new DummyMenu ('Go to page Person', 'menu/displayPage/PersonPage')];
+  sideLinks: DummyMenu[] = [new DummyMenu('Go to page Boat', 'menu/displayPage/BoatPage', 'HomePage'),
+                            new DummyMenu ('Go to page Person', 'menu/displayPage/PersonPage', 'HomePage')];
 
   constructor(public menu: CoreMenuService, private menuCtrl: MenuController) {}
 

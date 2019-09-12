@@ -10,7 +10,7 @@ import { CoreMenuService } from 'src/app/services/core-menu.service';
 export class PersonPage implements OnInit {
 
   // Create Title and Link that will be display in the menu
-  sideLinks: DummyMenu[] = [new DummyMenu('Go to page Planet', 'menu/displayPage/PlanetPage')];
+  sideLinks: DummyMenu[] = [new DummyMenu('Go to page Planet', 'menu/displayPage/PlanetPage', 'PersonPage')];
 
 
   constructor( public menu: CoreMenuService ) {}

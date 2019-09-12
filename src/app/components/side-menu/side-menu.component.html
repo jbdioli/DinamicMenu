@@ -25,7 +25,7 @@
 </ion-menu>
 
 <!-- Menu 1 -->
-<ion-menu slide="start" type="overlay" contentId="mainContent" menuId="slidingMenu1" id="slidingMenu1">
+<ion-menu slide="start" type="overlay" contentId="mainContent" menuId="slidingMenu1" id="slidingMenu1" (ionWillOpen)="menuOpened()" (ionDidClose)="menuClosed()">
 
   <ion-header>
     <ion-toolbar color="primary">
