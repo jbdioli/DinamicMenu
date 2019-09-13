@@ -12,6 +12,12 @@ export class CoreMenuService {
 
   constructor(public menu: MenuController) { }
 
+  // Hide all menu
+  public toggleMenuOFF() {
+    this.menu.enable(false, 'slidingMenu');
+    this.menu.enable(false, 'slidingMenu1');
+  }
+
   // Toggle the Menu and hide the one you do not need
   public toggleMenu() {
     this.menu.enable(true, 'slidingMenu');
